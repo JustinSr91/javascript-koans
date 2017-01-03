@@ -23,36 +23,36 @@ describe("About Arrays", function() {
     expect(array).toEqual([1]);
 
     array[1] = 2;
-    expect(array).toEqual([1, FILL_ME_IN]);
+    expect(array).toEqual([1, 2]);
 
     array.push(3);
-    expect(array).toEqual(FILL_ME_IN);
+    expect(array).toEqual([1, 2, 3]);
   });
 
   it("should understand array length", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length).toBe(4);
     fourNumberArray.push(5, 6);
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length).toBe(6);
 
     var tenEmptyElementArray = new Array(10);
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length).toBe(10);
 
     tenEmptyElementArray.length = 5;
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length).toBe(5);
   });
 
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
 
-    expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
-    expect(array.slice(0, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 20)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 0)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 100)).toEqual(FILL_ME_IN);
-    expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
+    expect(array.slice(0, 1)).toEqual(["peanut"]);
+    expect(array.slice(0, 2)).toEqual(["peanut", "butter"]);
+    expect(array.slice(2, 2)).toEqual([]);
+    expect(array.slice(2, 20)).toEqual(["and", "jelly"]);
+    expect(array.slice(3, 0)).toEqual([]);
+    expect(array.slice(3, 100)).toEqual(["jelly"]);
+    expect(array.slice(5, 1)).toEqual([]);
   });
 
   it("should know array references", function () {
