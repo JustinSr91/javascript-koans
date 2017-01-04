@@ -88,26 +88,50 @@ describe("About Applying What We Have Learnt", function() {
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
+  // /*
+
   it("should find the largest prime factor of a composite number", function () {
 
+    // Source: https://gist.github.com/nefarioustim/3215506
+    var x = 600851475143,
+    isPrime = function(n) {
+        if (n === 2) return true;
+        if (n % 2 === 0) return false;
+
+        // For Loop is being ran to cycle through numbers starting at 3...?
+        for (var factor = 3; factor <= Math.sqrt(n); factor += 2)
+            if (n % factor === 0) return false;
+
+        return true;
+    },
+    getLargestPrimeFactor = function(n) {
+        var largestPrimeFactor;
+        
+        // For Loop being ran to cycle through numbers starting at 2, and increasing by 2 every time..?
+        for (var factor = 2; factor <= Math.sqrt(n); factor++)
+            if (n % factor === 0 && isPrime(factor))
+                largestPrimeFactor = factor;
+
+        return largestPrimeFactor;
+    };
+
   });
 
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-
-  });
-
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-
-
-  });
-
-  it("should find the difference between the sum of the squares and the square of the sums", function () {
-
-  });
-
-  it("should find the 10001st prime", function () {
-
-  });
-  */
+  // it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+  //
+  // });
+  //
+  // it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+  //
+  //
+  // });
+  //
+  // it("should find the difference between the sum of the squares and the square of the sums", function () {
+  //
+  // });
+  //
+  // it("should find the 10001st prime", function () {
+  //
+  // });
+  // */
 });
