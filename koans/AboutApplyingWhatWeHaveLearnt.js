@@ -93,7 +93,10 @@ describe("About Applying What We Have Learnt", function() {
   it("should find the largest prime factor of a composite number", function () {
 
     // Source: https://gist.github.com/nefarioustim/3215506
+    // var x declared for composite number
     var x = 600851475143,
+
+    // conditions being set for determination of prime number...?
     isPrime = function(n) {
         if (n === 2) return true;
         if (n % 2 === 0) return false;
@@ -106,8 +109,8 @@ describe("About Applying What We Have Learnt", function() {
     },
     getLargestPrimeFactor = function(n) {
         var largestPrimeFactor;
-        
-        // For Loop being ran to cycle through numbers starting at 2, and increasing by 2 every time..?
+
+        // For Loop being ran to cycle through numbers starting at 2, and increasing by 2 every time...?
         for (var factor = 2; factor <= Math.sqrt(n); factor++)
             if (n % factor === 0 && isPrime(factor))
                 largestPrimeFactor = factor;
@@ -117,9 +120,29 @@ describe("About Applying What We Have Learnt", function() {
 
   });
 
-  // it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
   //
-  // });
+  // Source: https://gist.github.com/msnider/4315679
+
+  function palindromic() {
+    var max = 0;
+
+    // Two For Loops ran to find largest palindrome. Starts at 999 and counts down by one each time.
+    for(var i = 999; i > 99; i--) {
+      for(var k = 999; k > 99; k--) {
+        var n = i * k;
+        var s = '' + n;
+
+        // I understand why there is an if statement here, but not sure what is happening or how to decipher...
+        if (s === s.split("").reverse().join("") && n > max) {
+          max = n;
+        }
+      }
+    }
+    return max;
+}
+
+  });
   //
   // it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
   //
